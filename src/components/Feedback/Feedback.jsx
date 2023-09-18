@@ -8,21 +8,39 @@ class Feedback extends React.Component {
         bad: 0
     }
     statisticIncrementGood = () => {
-        this.setState({
-            good: this.state.good +1,
+        this.setState(prevState => {
+            return {
+                good: prevState.good +1,
+            }
+          
         })
     }
      statisticIncrementNeutral = () => {
-        this.setState({
-            neutral: this.state.neutral +1,
+        this.setState(prevState => {
+            return {
+                neutral: prevState.neutral +1,
+            }
+          
         })
     }
      statisticIncrementBad = () => {
-        this.setState({
-            bad: this.state.bad +1,
+        this.setState(prevState => {
+            return {
+                bad: prevState.bad + 1,
+            }
+          
         })
     }
+    countTotalFeedback = () => {
+        return this.state.good + this.state.neutral + this.state.bad
+        
+    }
+    countPositiveFeedbackPercentage = () => {
+
+    }
     render() {
+        const countTotalFeedback = Object.values(this.state).reduce((acc, state) => acc + state, 0); 
+        const countPositiveFeedbackPercentage = Math.round((this.state.good*100)/countTotalFeedback);
         return (<>
                 <div className={css.buttonWrapper}>
                     <button type="button" onClick={this.statisticIncrementGood} className={css.button55}>Good</button>
@@ -34,6 +52,8 @@ class Feedback extends React.Component {
                     <p className={css.textStatistics}>Good: {this.state.good}</p>
                     <p className={css.textStatistics}>Neutral: {this.state.neutral}</p>
                     <p className={css.textStatistics}>Bad: {this.state.bad}</p>
+                    <p className={css.textStatistics}>Total: {countTotalFeedback}</p>
+                    <p className={css.textStatistics}>Positive feedback: { countPositiveFeedbackPercentage}</p>
                 </div>
             </>
         )
