@@ -17,7 +17,7 @@
   color: #41403e;
 }
 
-.button55 {
+.button {
   width: 100px;
   height: 70px;
   align-self: center;
@@ -43,11 +43,11 @@
   border-top-right-radius: 15px 225px;
 }
 
-.button55:hover {
+.button:hover {
   background-color: #c3d9dd;
 }
 
-.button55:focus {
+.button:focus {
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
 .text {
