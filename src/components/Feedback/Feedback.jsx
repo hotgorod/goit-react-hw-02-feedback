@@ -1,5 +1,4 @@
 import React from "react";
-import css from './Feedback.module.css'
 import Statistics from "components/Statistics/Statistics";
 import FeedbackOptions from "components/FeedbackOptions/FeedbackOptions";
 import Section from "components/Section/Section";
